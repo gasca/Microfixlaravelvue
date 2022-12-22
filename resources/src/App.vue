@@ -1,9 +1,7 @@
-<template>
-  <h1>Laravel 9 + VUE3 hoooo</h1>
-</template>
+<template></template>
 
-
+<!--
 <script setup>
 
-</script>
+</script> -->
 

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::view('/', 'inicio')->name('inicio');
+Route::view('/servicios', 'servicios')->name('servicios');
+Route::view('/contacto', 'contacto')->name('contacto');
+
+
+// Route::get('/', 'UserController@microfix')->name('users.microfix');
+
+
+Route::get('/portal', 'UserController@portal')
+->name('users.portal');
+
+
+
+Route::get('/usuarios', 'UserController@index')
+->name('users.index');
+
+
+Route::get('/usuarios/{user}', 'UserController@show')
+-> where ('user', '[0-9]+')
+-> name('users.show');
+
+
+
+Route::get('/computadora/nuevo', 'ComputerController@create')->name('computer.create');
+
+//-----------------es importante el orden de las rutas  /usuarios/crear o user--------------------//
+
+Route::get('/usuarios/nuevo', [UserController::class, 'create'])->name('users.create');
+
+Route::post('/usuarios/crear', 'UserController@store')->name('users.store');
+
+Route::get('/usuarios/{user}/editar', 'UserController@edit')->name('users.edit');
+
+Route::put('/usuarios/{user}', 'UserController@update')->name('users.update');
+
+Route::delete('usuarios/{user}','UserController@destroy' )->name('users.destroy');
+
+
+//----------------------------------//
+
+Route::get('/registro/nuevo', 'ComputerController@create')->name('computer.create');
+
+Route::post('/registro/crear', 'ComputerController@store');
