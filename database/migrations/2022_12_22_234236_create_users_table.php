@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('correo')->unique();
+            $table->string('password');
+            $table->string('ciudad');
+            $table->string('colonia');
+            $table->string('direccion');
+            $table->string('Celular'); //celular cambiar despues
+            $table->timestamp('fecha_correo')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

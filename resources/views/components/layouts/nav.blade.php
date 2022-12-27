@@ -29,6 +29,7 @@ bg-blue-200 items-center justify-center
             <a
             class="text-blue-500  px-3 py-2 transition-colors hover:text-blue-900"
             href="{{route('users.create')}}">Registrar Usuario</a>
+
             <a
             class="text-blue-500  px-3 py-2 transition-colors hover:text-blue-900"
             href="{{route('servicios')}}">Servicios</a>
@@ -38,7 +39,7 @@ bg-blue-200 items-center justify-center
         </div>
 
 {{--Agregamos iniciar sesión o registrarse--}}
-    <div class="ml-12 bg-red-200 hidden md:flex space-x-8">
+    <div class="ml-12 hidden md:flex space-x-8">
 
         <button   class="
         text-blue-500
@@ -122,3 +123,10 @@ bg-blue-200 items-center justify-center
         href="{{route('contacto')}}">Contacto</a>
 
     </div>
+
+
+    @if(session('status'))
+    <div class="text-blue-600 mt-5 fade-transition-enter delay-1000">
+            {{session('status')}}
+    </div>
+    @endif

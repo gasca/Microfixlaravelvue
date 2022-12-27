@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Microfix - {{$tittle ?? 'Soluciones en Tecnologías'}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="description" content="{{$metaDescription ?? "Microfix Tecnologia en Cómputo"}}"
+    <meta name="description" content="{{$metaDescription ?? "Microfix Tecnologia en Cómputo"}}">
     @vite('resources/css/app.css')
 </head>
 <body class="bg-slate-100">

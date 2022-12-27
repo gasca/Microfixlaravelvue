@@ -13,7 +13,7 @@ class StoreuserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreuserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+               'Nombre'=>['required'],
+                'Apellidos'=>['required'],
+                'Correo'=>['required'],
+                // 'Correo'=>['required' Rule::class()unique:table,column,except,id],
+                'Password'=>['required'],
+                'Password2'=>['required'],
+                'Ciudad'=>['required'],
+                'Colonia'=>['required'],
+                'Direccion'=>['required'],
+                'Celular'=>['required'],
         ];
     }
 }

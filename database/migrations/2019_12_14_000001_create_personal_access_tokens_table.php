@@ -4,6 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// notas
+// migrate:fresh se usa para agregar una nueva columna, pero borra todo lo de la tabla
+/*
+* si deseamos agregar una columna sin perder informacion sera
+* php artisan make:migration add_body_to_users_table
+* $table->string('body'); dentro de la clase
+*/
+
 return new class extends Migration
 {
     /**

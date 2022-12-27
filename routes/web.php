@@ -32,13 +32,11 @@ Route::view('/contacto', 'contacto')->name('contacto');
 Route::get('/portal', 'UserController@portal')
 ->name('users.portal');
 
+Route::get('/usuario/nuevo', [UserController::class, 'create'])->name('users.create');
+Route::get('/usuarios/todos', [UserController::class, 'index'])->name('users.index');
 
 
-Route::get('/usuarios', 'UserController@index')
-->name('users.index');
-
-
-Route::get('/usuarios/{user}', 'UserController@show')
+Route::get('/usuarios/{user}', [UserController::class, 'show'])
 -> where ('user', '[0-9]+')
 -> name('users.show');
 
@@ -48,15 +46,16 @@ Route::get('/computadora/nuevo', 'ComputerController@create')->name('computer.cr
 
 //-----------------es importante el orden de las rutas  /usuarios/crear o user--------------------//
 
-Route::get('/usuarios/nuevo', [UserController::class, 'create'])->name('users.create');
+// Route::get('/usuarios/nuevo', [UserController::class, 'create'])->name('users.create');
 
-Route::post('/usuarios/crear', 'UserController@store')->name('users.store');
 
-Route::get('/usuarios/{user}/editar', 'UserController@edit')->name('users.edit');
+Route::post('/usuarios/crear', [UserController::class, 'store'])->name('users.store');
 
-Route::put('/usuarios/{user}', 'UserController@update')->name('users.update');
+Route::get('/usuarios/{user}/editar', [UserController::class, 'edit'])->name('users.edit');
 
-Route::delete('usuarios/{user}','UserController@destroy' )->name('users.destroy');
+Route::put('/usuarios/{user}', [UserController::class ,'update'])->name('users.update');
+
+Route::delete('usuarios/{user}',[UserController::class,'destroy'] )->name('users.destroy');
 
 
 //----------------------------------//
