@@ -1,4 +1,4 @@
-        <x-layouts.app
+<x-layouts.app
         title="Modificar usuario"
         meta-Descripcion="Modificar usuario"
             >
@@ -11,14 +11,14 @@
 
             <form class="space-y-2"
             method="POST"
-            action="{{route('users.update', $user)}}"
+            action="{{route('equipo.update', $equipo)}}"
             enctype="multipart/form-data"
             >
         @csrf
         @method('PATCH')
         {{-- {{csrf_field()}} --}}
 
-        @include('components.layouts.userForm')
+        @include('components.layouts.equipoForm')
 
 
 

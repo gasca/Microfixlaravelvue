@@ -113,7 +113,7 @@ class UserController extends Controller
     {
         $title ='Editar usuario';
         $btntitle = 'Guardar Cambios';
-        return view('users.create')
+        return view('users.edit')
         ->with('user', $user)
         ->with('title', $title)
         ->with('btntitle', $btntitle);
@@ -129,7 +129,7 @@ class UserController extends Controller
      */
     public function update(UpdateuserRequest $request, user $user)
     {
-            $user->update($validated());
+            $user->update($request->validated());
             return redirect()->route('users.index');
 
 

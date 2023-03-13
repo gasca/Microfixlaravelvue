@@ -53,7 +53,8 @@ Route::post('/usuarios/crear', [UserController::class, 'store'])->name('users.st
 
 Route::get('/usuarios/{user}/editar', [UserController::class, 'edit'])->name('users.edit');
 
-Route::put('/usuarios/{user}', [UserController::class ,'update'])->name('users.update');
+// patch actualizar, put remplazar
+Route::patch('/usuarios/{user}', [UserController::class ,'update'])->name('users.update');
 
 Route::delete('usuarios/{user}',[UserController::class,'destroy'] )->name('users.destroy');
 

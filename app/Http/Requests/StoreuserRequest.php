@@ -27,7 +27,7 @@ class StoreuserRequest extends FormRequest
                'Nombre'=>['required'],
                 'Apellidos'=>['required'],
                 'Correo'=>['required'],
-                // 'Correo'=>['required' Rule::class()unique:table,column,except,id],
+                 //'Correo'=>['required' Rule::class()unique:table,column,except,id],
                 'Password'=>['required'],
                 'Password2'=>['required'],
                 'Ciudad'=>['required'],

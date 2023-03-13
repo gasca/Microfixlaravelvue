@@ -23,11 +23,14 @@ class UpdateuserRequest extends FormRequest
      */
     public function rules()
     {
+
+       // dd($this->user);
         return [
             //
             'Nombre'=>['required'],
                 'Apellidos'=>['required'],
-                'Correo'=>['required'],
+                'Correo'=>['required', 'unique:users,correo,'.$this->user->id],
+                
                 // 'Correo'=>['required' Rule::class()unique:table,column,except,id],
                 'Password'=>['required'],
                 'Password2'=>['required'],
